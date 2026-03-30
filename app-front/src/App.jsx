@@ -1,30 +1,15 @@
-import { useState } from 'react';
+import ListaTarefas from "./components/ListaTarefa.jsx";
+import ModoEscuro from "./components/ModoEscuro.jsx";
+import NomeUsuario from "./components/NomeUsuario.jsx";
 
-function ListaTarefas() {
-    const [tarefas, setTarefas] = useState(['Estudar React']);
-    const [novaTarefa, setNovaTarefa] = useState('');
-    const adicionarTarefa = () => {
-        if (novaTarefa.trim() === '') return;
-        setTarefas([...tarefas, novaTarefa]);
-        setNovaTarefa('');
-    };
-    return (
-        <div>
-            <h2>Lista de Tarefas</h2>
-                <input
-                    type="text"
-                    value={novaTarefa}
-                    onChange={(e) => setNovaTarefa(e.target.value)}
-                    placeholder="Digite uma nova tarefa"
-                />
-            <ul>
-                {tarefas.map((tarefa, index) => (
-                    <li key={index}>{tarefa}</li>
-                ))}
-            </ul>
-            <button onClick={adicionarTarefa}>Adicionar Tarefa</button>
-        </div>
-    );
+function App() {
+  return (
+    <main>
+      <ModoEscuro></ModoEscuro>
+      <NomeUsuario></NomeUsuario>
+      <ListaTarefas></ListaTarefas>
+    </main>
+  );
 }
 
-export default ListaTarefas;
+export default App;
