@@ -22,6 +22,11 @@ function ListaTarefas() {
       ></input>
 
       <button onClick={adicionarTarefa}>Adicionar</button>
+      <ul>
+        {tarefas.map((tarefa, index) => (
+          <li key={index}>{tarefa}</li>
+        ))}
+      </ul>
     </div>
   );
 }
